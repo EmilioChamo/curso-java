@@ -6,15 +6,7 @@ public class Persona {
    private String direccion;
    private String apellido;
 
- public void mostrarMensaje(String mensaje){
-        System.out.println(mensaje);
-    }
-    
- public void setEdad(){
-               Scanner tec= new Scanner(System.in);
-               mostrarMensaje("ingrese la edad por favor");
-               this.edad=tec.nextInt();
-    }
+
 
  public String getDireccion(){
    return this.direccion;
@@ -38,12 +30,7 @@ public void setDireccion(){
          this.direccion=tec.nextLine();
    }
 
-public void cargarDatos(){
-         setNombre();
-         setEdad();
-         setDireccion();
-         setApellido();
-   }
+
 public void setApellido(){
    Scanner tec = new Scanner(System.in);
    mostrarMensaje("ingrese el apellido");
@@ -54,5 +41,22 @@ public void setNombre(){
    Scanner tec = new Scanner(System.in);
    mostrarMensaje("ingrese el nombre de la persona");
    this.nombre=tec.nextLine();
+}
+
+public void setEdad(){
+   Scanner tec= new Scanner(System.in);
+   mostrarMensaje("ingrese la edad por favor");
+   this.edad=tec.nextInt();
+}
+
+public void cargarDatos(){
+   setNombre();
+   setEdad();
+   setDireccion();
+   setApellido();
+}
+
+public void mostrarMensaje(String mensaje){
+   System.out.println(mensaje);
 }
 }
