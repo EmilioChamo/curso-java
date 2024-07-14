@@ -59,4 +59,9 @@ public void cargarDatos(){
 public void mostrarMensaje(String mensaje){
    System.out.println(mensaje);
 }
+
+public void carga(){
+   
+}
+
 }

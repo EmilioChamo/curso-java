@@ -2,26 +2,63 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class main {
     public static void main (String[]args){
-       boolean flag=false;
+       boolean menu,flag=false;
        Scanner tec = new Scanner(System.in);
        char resp;
        ArrayList<Persona>lista= new ArrayList<>(); 
        int cp=0;
+       int op;
        
 
-       while(flag==false){
-        Persona per= new Persona();
-        per.cargarDatos();
-        lista.add(per);
-          
-          System.out.println("desea continuar con la carga s/n");
-          resp=tec.next().charAt(0);
-   
-          if(resp=='n'){
-             flag=true;
-          }
+       System.out.println("Binvenido al sistema"+"\n"+ "1:Carga"+"\n"+"2:Busqueda"+"\n"+"3:Modificacion"+"\n"+"4:Eliminacion"+"\n"+"5:Salir");
+           op=tec.nextInt();
+
+           switch(op){
+            case 1:
+              while(flag==false){
+              Persona per= new Persona();
+              per.cargarDatos();
+              lista.add(per);
+                
+                System.out.println("desea continuar con la carga s/n");
+                resp=tec.next().charAt(0);
          
-        }
+                if(resp=='n'){
+                   flag=true;
+                }
+              }
+              break;
+              case 2:
+              char opcion;
+              System.out.println("Seleccione la opcion de busqueda n=Nombre,a=Apellido");
+              System.out.println("----------------------------------------------------");
+                opcion= tec.next().charAt(0);
+                       if(opcion=='n'){
+                        System.out.print("ingrese el nombre a buscar por favor: ");
+                        String nombre=tec.nextLine();
+                               
+                           for(Persona Lista:lista){
+                             if(Lista.getNombre()==nombre){
+                              System.out.println("Nombre: "+Lista.getNombre() + "\n"+"Edad: "+Lista.getEdad()+"\n"+"Apellido :"+Lista.getApellido()+"\n"+"Direccion: "+Lista.getDireccion());
+                                  System.out.println("----------------------------------");
+                             }
+                           }
+                       }else if(opcion=='a'){
+                        System.out.print("ingrese el apellido a buscar por favor: ");
+                        String apellido=tec.nextLine();
+                        for(Persona Lista:lista){
+                          if(Lista.getNombre()==apellido){
+                           System.out.println("Nombre: "+Lista.getNombre() + "\n"+"Edad: "+Lista.getEdad()+"\n"+"Apellido :"+Lista.getApellido()+"\n"+"Direccion: "+Lista.getDireccion());
+                               System.out.println("----------------------------------");
+                          }
+                        }
+                       }
+
+
+              }
+           
+
+       
        
             for(Persona Lista:lista){
                 System.out.println("Nombre: "+Lista.getNombre() + "\n"+"Edad: "+Lista.getEdad()+"\n"+"Apellido :"+Lista.getApellido()+"\n"+"Direccion: "+Lista.getDireccion());
