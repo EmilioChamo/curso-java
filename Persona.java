@@ -1,14 +1,18 @@
 import java.util.Scanner;
 
+
 public class Persona {
-   private int edad=0;
+   private String edad;
    private String nombre;
    private String direccion;
    private String apellido;
+   private Scanner tec= new Scanner(System.in);
+    
 
 
 
- public String getDireccion(){
+
+   public String getDireccion(){
    return this.direccion;
  }   
 
@@ -16,7 +20,7 @@ public class Persona {
    return this.apellido;
  }
  
-public int getEdad(){
+public String getEdad(){
    return this.edad;
     }
 
@@ -38,30 +42,35 @@ public void setApellido(){
 }
     
 public void setNombre(){
+   String nom;
    Scanner tec = new Scanner(System.in);
    mostrarMensaje("ingrese el nombre de la persona");
-   this.nombre=tec.nextLine();
+   nom=tec.nextLine();
+   while(nom.isEmpty()){
+      mostrarMensaje("el campo no puede estar vacio,debe ingresar un nombre valido");
+      nom=tec.nextLine();
+   }
+   this.nombre=nom;
+   
 }
 
 public void setEdad(){
    Scanner tec= new Scanner(System.in);
    mostrarMensaje("ingrese la edad por favor");
-   this.edad=tec.nextInt();
+   this.edad=tec.nextLine();
 }
 
-public void cargarDatos(){
-   setNombre();
-   setEdad();
-   setDireccion();
-   setApellido();
-}
+/*public void cargarDatos(){
+setNombre();
+setApellido();
+setEdad();
+setDireccion();
+}*/
 
 public void mostrarMensaje(String mensaje){
    System.out.println(mensaje);
 }
 
-public void carga(){
-   
-}
+ 
 
 }
