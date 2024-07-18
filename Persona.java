@@ -10,7 +10,14 @@ public class Persona {
     
 
 
-
+public Persona crearPersona(){
+   Persona per =new Persona();
+   setNombre();
+   setApellido();
+   setEdad();
+   setDireccion();
+   return per;
+}
 
    public String getDireccion(){
    return this.direccion;
