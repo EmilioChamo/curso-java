@@ -67,17 +67,11 @@ while (menu==false){
                   Scanner in= new Scanner(System.in);
                   String per;
                   per=in.nextLine();
-                     for(Persona persona:lista){
-                        if(persona.getNombre().contains(per)){
-                              for(Persona person:lista){
-                         System.out.println("------------------------------------------------------------------------------------------");           
-                         System.out.println("Nombre:"+person.getNombre()+"\n"+"Apellido:"+person.getApellido()+"\n"+"Edad:"+person.getEdad()+"\n"+"Direccion:"+person.getDireccion());
-                         System.out.println("------------------------------------------------------------------------------------------");
-                               }  
-                               break;                     
-                             } 
-                           }  
-                            
+                          for(int i=0;i<lista.size();i++){
+                              if(lista.get(i).getNombre().equals(per)){
+                                System.out.println(lista.get(i).getNombre()+lista.get(i).getApellido());
+                              }            
+                          }
                         }   
           
        
