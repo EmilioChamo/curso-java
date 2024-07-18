@@ -10,14 +10,12 @@ public class Persona {
     
 
 
-public Persona crearPersona(){
-   Persona per =new Persona();
+public void crearPersona(){
    setNombre();
    setApellido();
    setEdad();
    setDireccion();
-   return per;
-}
+   }
 
    public String getDireccion(){
    return this.direccion;
@@ -67,12 +65,7 @@ public void setEdad(){
    this.edad=tec.nextLine();
 }
 
-/*public void cargarDatos(){
-setNombre();
-setApellido();
-setEdad();
-setDireccion();
-}*/
+
 
 public void mostrarMensaje(String mensaje){
    System.out.println(mensaje);
