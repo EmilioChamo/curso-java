@@ -32,13 +32,13 @@ while (menu==false){
                                           menu=true;
                                            break;
                                           }  
+                                          
                                     }//ciere de bienvenido//
                      }  //cierre de while menu//
-      for(Persona persona:lista){
-        System.out.println(persona.getNombre()+persona.getApellido());
-      }
+      
    
-  }   //cierre de main//
+
+  }   //cierre de metodo main//
 
                
          //modulos inico static//
@@ -68,15 +68,15 @@ while (menu==false){
                   String per;
                   per=in.nextLine();
                      for(Persona persona:lista){
-                        if(persona.getNombre().equals(per)){
+                        if(persona.getNombre().contains(per)){
                               for(Persona person:lista){
                          System.out.println("------------------------------------------------------------------------------------------");           
                          System.out.println("Nombre:"+person.getNombre()+"\n"+"Apellido:"+person.getApellido()+"\n"+"Edad:"+person.getEdad()+"\n"+"Direccion:"+person.getDireccion());
                          System.out.println("------------------------------------------------------------------------------------------");
-                         
-                              }                       
-                             }                 
-                            }  
+                               }  
+                               break;                     
+                             } 
+                           }  
                             
                         }   
           
